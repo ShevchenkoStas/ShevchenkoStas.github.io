@@ -51,45 +51,45 @@ $user = $_SESSION['user'];
         <body>
 		__________________________
 		__________________________
-		<h1>График работы магазина</h1>
-	<h1>График работы магазина</h1>
+		<h1>Графік роботи магазину</h1>
+	<h1>Графік роботи магазину</h1>
 	<table>
 		<tr>
-			<th>День недели</th>
-			<th>Часы работы</th>
+			<th>День тижня</th>
+			<th>Години роботи</th>
 		</tr>
 		<tr>
-			<td>Понедельник</td>
+			<td>Понеділок</td>
 			<td>10:00 - 20:00</td>
 		</tr>
 		<tr>
-			<td>Вторник</td>
+			<td>Вівторок</td>
 			<td>10:00 - 20:00</td>
 		</tr>
 		<tr>
-			<td>Среда</td>
+			<td>Середа</td>
 			<td>10:00 - 20:00</td>
 		</tr>
 		<tr>
-			<td>Четверг</td>
+			<td>Четвер</td>
 			<td>10:00 - 20:00</td>
 		</tr>
 		<tr>
-			<td>Пятница</td>
+			<td>П'ятниця</td>
 			<td>10:00 - 21:00</td>
 		</tr>
 		<tr>
-			<td>Суббота</td>
+			<td>Субота</td>
 			<td>10:00 - 21:00</td>
 		</tr>
 		<tr>
-			<td>Воскресенье</td>
+			<td>Неділя</td>
 			<td>10:00 - 20:00</td>
 		</tr>
 	</table>
 
-	<h2>Информация о работе магазина</h2>
-	<p>Магазин предлагает широкий выбор шаурмы и хот-догов. У нас всегда свежие и качественные продукты. Мы рады предложить Вам наши лучшие блюда.</p>
+	<h2>Інформація по роботі магазину</h2>
+	<p>Магазин пропонує широкий вибір шаурми і хот-догів. У нас завжди свіжі та якісні продукти. Ми раді предоставити Вам наші найкращі страви.</p>
 </body>
 </html>
     <div class="wrap-footer">
@@ -117,40 +117,7 @@ $user = $_SESSION['user'];
             </div>
         </footer>
     </div>
-    <script>
-        
-        function update() {
-            $.ajax({
-                type: "POST",
-                url: "tools/chat_processor.php",
-                data: {"action":"update"},
-                success: function(response) {
-                    $(".block-chat").html("");
-                    console.log(response);
-                    let data = JSON.parse(response);
-                    for(let i=0; i<data.length;i++){
-                        let html = `<div class="message">
-                    <h3>${data[i].author}</h3>
-                    <p>${data[i].text}</p>
-                </div>`;
-                    $(".block-chat").append(html);
-                    }
-                },
-            });
-        }
-        update();
-        setInterval(update,1000);
-        $("#send-message").click(function(){
-            var data = {"action":"send","text":$("#text").val()};
-            $("#text").val("");
-            $.ajax({
-                type: "POST",
-                url: "tools/chat_processor.php",
-                data: data,
-            });
-        });
-
-    </script>
+    
 </body>
 
 </html>
