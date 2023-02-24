@@ -108,9 +108,9 @@ $user = $_SESSION['user'];
     <h1>АВТОРИЗАЦІЯ</h1>
     <form action="login.php" method="post">
       <label for="username">Логін:</label>
-      <input type="text" id="username" name="stanislav">
+      <input type="text" id="username" name="username">
       <label for="password">Пароль:</label>
-      <input type="password" id="password" name="shevchenko">
+      <input type="password" id="password" name="username">
       <input type="submit" value="Увійти">
     </form>
     <p>Відсутній аккаунт? <a href="register.php">Зареєструйтесь</a></p>
